@@ -1,0 +1,4 @@
+export const ApiUrl = ($city = "bursa") => {
+    return `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${$city}?unitGroup=metric&elements=datetime%2CdatetimeEpoch%2Cname%2Clatitude%2Clongitude%2Ctempmax%2Ctempmin%2Ctemp%2Cfeelslike%2Cdew%2Chumidity%2Cprecip%2Cprecipprob%2Cprecipcover%2Cpreciptype%2Csnow%2Csnowdepth%2Cwindgust%2Cwindspeed%2Cwinddir%2Cpressure%2Ccloudcover%2Cvisibility%2Csolarradiation%2Csolarenergy%2Cuvindex%2Csevererisk%2Csunrise%2Csunset%2Cdescription%2Cicon&include=days%2Cfcst&key=${process.env.REACT_APP_API}`
+}
+export const imgUrl = () => process.env.PUBLIC_URL + `/assets/`
