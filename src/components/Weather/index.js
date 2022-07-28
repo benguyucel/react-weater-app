@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react'
 import { imgUrl } from '../../api';
+import { useIconSet } from '../../context/IconSetProvider';
 import { useWeather } from '../../context/WeatherContext'
 import { ConvertDay } from '../../utilities/ConvertTimeToDay';
 
 function Weather() {
     const { weather } = useWeather();
+    const { icon } = useIconSet()
     return (
         <div className="row">
-            {weather && weather.map((item,index) => (
+            {weather && weather.map((item, index) => (
                 <div className="col-md-3 mb-2" key={index}>
                     <div className="border">
                         <div className="date-container  d-flex justify-content-between p-3">
@@ -16,7 +18,7 @@ function Weather() {
                         </div>
                         <div className="my-2 flex-column align-items-center content d-flex justify-content-center">
                             <h2>{item.temp}°C</h2>
-                            <img src={`${imgUrl()}Color_SET1/${item.icon}.png`}/>
+                            <img src={`${imgUrl()}${icon}/${item.icon}.png`} />
                         </div>
                         <div className="p-2 content-bottom d-flex justify-content-between">
                             <span> Max {item.tempmax}°C</span>

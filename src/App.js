@@ -1,19 +1,21 @@
 import './App.css';
 import Header from './components/Header';
 import Weather from './components/Weather';
-import { useTheme } from './context/ThemeContext';
+import { IconSetProvider } from './context/IconSetProvider';
+import { ThemeProviver, useTheme } from './context/ThemeContext';
 import { WeatherProvider } from './context/WeatherContext';
 import { colors } from './data/colors'
 
 function App() {
-  const { theme } = useTheme();
   return (
-    <div style={{ 'backgroundColor': colors[theme] }}>
+    <div style={{ 'backgroundColor': '#f5f6fa' }}>
       <WeatherProvider>
-        <div className="container-fluid">
-          <Header />
-          <hr />
-          <Weather />
+        <div className="container">
+          <IconSetProvider>
+            <Header />
+            <hr />
+            <Weather />
+          </IconSetProvider>
         </div>
       </WeatherProvider>
 

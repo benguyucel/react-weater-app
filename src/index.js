@@ -7,6 +7,6 @@ import { ThemeProviver } from './context/ThemeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <ThemeProviver><App /></ThemeProviver>
+    <App />
 );
 
